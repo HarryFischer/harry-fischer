@@ -1,0 +1,97 @@
+---
+# Only the main Sass file needs front matter (the dashes are enough)
+---
+
+@import "minima";
+
+.info-overlay {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    color: white;
+    background-color: black;
+    width: 100px;
+    height: 100px;
+    overflow: hidden;
+    span {
+        font-size: 50px;
+    }
+}
+
+section {
+    position: relative;
+    &.container {
+            background-color: #fff;
+            position: relative;
+            height: 100vh;
+            padding: 0;
+            position: sticky;
+            top: 0;
+
+    
+            .l,
+            .m,
+            .r {
+                background-color: black;
+            }
+    
+            .l {
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: calc(50vw + 4px);
+                bottom: 0;
+            }
+    
+            .m {
+                position: absolute;
+                top: calc(50vh - 80px);
+                left: 0;
+                right: 0;
+                bottom: calc(50vh - 80px);
+            }
+    
+            .r {
+                position: absolute;
+                top: 0;
+                right: 0;
+                left: calc(50vw + 4px);
+                bottom: 0;
+            }
+        }
+
+        .content {
+            background-color: white;
+            position: relative;
+            padding: 0 20px;
+            display: flex;
+            flex-direction: column;
+            @media (min-width: 740px) {
+                flex-direction: row;
+            } 
+            
+            &-left {
+                position: sticky;
+                top: 20px;
+                @media (min-width: 740px) {
+                    width: 50%;
+                    position: unset;
+                    h2 {
+                        position: sticky;
+                        top: 20px;
+                    }
+                }
+                
+            }
+            &-right {
+                div img {
+                    display: block;
+                    margin: 100px auto;
+                }
+                @media (min-width: 740px) {
+                    width: 50%;
+                    border-left: 8px solid black;
+                }
+            }
+        }
+}
